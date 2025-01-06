@@ -1,24 +1,25 @@
-// Smooth scroll for navbar links
-const navbarLinks = document.querySelectorAll('.navbar a');
+document.getElementById('contact-form').addEventListener('submit', function (event) {
+  event.preventDefault(); // Prevent the default form submission
+  
+  const form = event.target;
+  const statusDiv = document.getElementById('form-status');
 
-navbarLinks.forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
-    const targetId = link.getAttribute('href').substring(1);
-    const targetElement = document.getElementById(targetId);
-    
-    window.scrollTo({
-      top: targetElement.offsetTop - 80, // Offset to account for navbar height
-      behavior: 'smooth'
-    });
+  fetch(form.action, {
+      method: form.method,
+      body: new FormData(form),
+      headers: {
+          'Accept': 'application/json'
+      }
+  })
+  .then(response => {
+      if (response.ok) {
+          statusDiv.innerHTML = '<p>Thank you! Your message has been sent successfully.</p>';
+          form.reset(); // Reset the form
+      } else {
+          statusDiv.innerHTML = '<p>Oops! Something went wrong, please try again.</p>';
+      }
+  })
+  .catch(error => {
+      statusDiv.innerHTML = '<p>Oops! Something went wrong, please try again.</p>';
   });
-});
-
-// Success message after form submission (Formspree shows a default success message)
-document.querySelector('form').addEventListener('submit', function(e) {
-  e.preventDefault(); // Prevents form from default behavior if you want to handle it
-  document.getElementById('form-status').textContent = 'Your message has been sent successfully! Thank you for reaching out.';
-  setTimeout(() => {
-    document.getElementById('form-status').textContent = ''; // Clear message after 5 seconds
-  }, 5000); // Message will disappear after 5 seconds
 });
