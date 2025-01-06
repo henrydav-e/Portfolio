@@ -14,19 +14,14 @@ navbarLinks.forEach(link => {
   });
 });
 
-// Form validation and submission
+// Success message after form submission
 document.getElementById('contact-form').addEventListener('submit', function(e) {
   e.preventDefault();
-  
-  const name = this.name.value;
-  const email = this.email.value;
-  const message = this.message.value;
 
-  if (name && email && message) {
-    alert('Message sent successfully!');
-    // You can handle form submission here (e.g., send data to a server)
-    this.reset(); // Reset the form fields
-  } else {
-    alert('Please fill out all fields.');
-  }
+  // Show success message
+  const formStatus = document.getElementById('form-status');
+  formStatus.textContent = 'Your message has been sent successfully! Thank you for reaching out.';
+
+  // Clear the form fields
+  this.reset();
 });

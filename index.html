@@ -49,12 +49,13 @@
                 <li>Email: <a href="mailto:hd.capilitan@gmail.com">hd.capilitan@gmail.com</a></li>
                 <li>GitHub: <a href="https://github.com/henrydav-e" target="_blank">github.com/henrydav-e</a></li>
             </ul>
-            <form id="contact-form">
+            <form id="contact-form" action="https://formspree.io/f/mwkjrpnk" method="POST">
                 <input type="text" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Your Email" required>
                 <textarea name="message" placeholder="Your Message" required></textarea>
                 <button type="submit" class="btn">Send Message</button>
             </form>
+            <div id="form-status"></div> <!-- Success or error message will appear here -->
         </div>
     </section>
 
