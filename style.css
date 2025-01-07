@@ -122,3 +122,31 @@ footer {
 footer p {
   font-size: 1em;
 }
+
+#certifications {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+}
+
+.certifications-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.certifications-list li {
+  margin-bottom: 20px;
+  border-left: 4px solid #0073e6;
+  padding-left: 15px;
+}
+
+.certifications-list h3 {
+  margin: 0 0 5px;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.certifications-list p {
+  margin: 0;
+  color: #666;
+  font-size: 0.95em;
+}
