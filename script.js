@@ -1,5 +1,5 @@
 document.getElementById('contact-form').addEventListener('submit', function (event) {
-  event.preventDefault(); // Prevent the default form submission
+  event.preventDefault(); 
   
   const form = event.target;
   const statusDiv = document.getElementById('form-status');
@@ -14,7 +14,7 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
   .then(response => {
       if (response.ok) {
           statusDiv.innerHTML = '<p>Thank you! Your message has been sent successfully.</p>';
-          form.reset(); // Reset the form
+          form.reset(); 
       } else {
           statusDiv.innerHTML = '<p>Oops! Something went wrong, please try again.</p>';
       }
